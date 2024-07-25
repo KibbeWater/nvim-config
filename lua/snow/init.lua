@@ -1,4 +1,3 @@
-print("Hello Snow")
 -- Initialize the plugin system
 vim.cmd [[call plug#begin()]]
 
