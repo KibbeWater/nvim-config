@@ -23,6 +23,7 @@ return {
         "stylua",
         "html-lsp",
         "css-lsp",
+        "gopls",
         "prettierd",
         "tailwindcss-language-server",
         "typescript-language-server",
