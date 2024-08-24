@@ -1,4 +1,6 @@
 return {
+  { "ThePrimeagen/vim-be-good", lazy = false },
+  { "tpope/vim-fugitive", lazy = false },
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -27,6 +29,9 @@ return {
         "prettierd",
         "tailwindcss-language-server",
         "typescript-language-server",
+        "marksman",
+        "mdx-analyzer",
+        "astro-language-server",
       },
     },
   },
