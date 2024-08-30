@@ -20,7 +20,7 @@ local function run_git_command(path, command, callback)
     })
 end
 
-function check_git_status()
+local function check_git_status()
     local config_path = get_config_path()
     local current_hash, remote_hash
 
