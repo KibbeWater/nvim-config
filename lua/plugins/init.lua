@@ -1,6 +1,7 @@
 return {
     { "ThePrimeagen/vim-be-good", lazy = false },
     { "tpope/vim-fugitive", lazy = false },
+    { "github/copilot.vim", lazy = false },
     {
         "stevearc/conform.nvim",
         event = "BufWritePre", -- uncomment for format on save
