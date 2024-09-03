@@ -9,7 +9,6 @@ return {
             require "configs.conform"
         end,
     },
-
     {
         "yetone/avante.nvim",
         event = "VeryLazy",
@@ -101,6 +100,13 @@ return {
         },
     },
     {
+        "windwp/nvim-ts-autotag",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        opts = {},
+        lazy = true,
+        event = "InsertEnter", -- load on insert enter
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {
@@ -109,6 +115,36 @@ return {
                 "vimdoc",
                 "html",
                 "css",
+                "editorconfig",
+                "javascript",
+                "typescript",
+                "tsx",
+                "json",
+                "go",
+            },
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
+            autotag = {
+                enable = true,
+                filetypes = {
+                    "html",
+                    "javascript",
+                    "typescript",
+                    "javascriptreact",
+                    "typescriptreact",
+                    "svelte",
+                    "vue",
+                    "tsx",
+                    "jsx",
+                    "rescript",
+                    "css",
+                    "lua",
+                    "xml",
+                    "php",
+                    "markdown",
+                },
             },
         },
     },
