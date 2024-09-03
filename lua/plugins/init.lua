@@ -101,9 +101,7 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
-        dependencies = "nvim-treesitter/nvim-treesitter",
         opts = {},
-        lazy = true,
         event = "InsertEnter", -- load on insert enter
     },
     {
