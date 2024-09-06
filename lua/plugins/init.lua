@@ -100,11 +100,6 @@ return {
         },
     },
     {
-        "windwp/nvim-ts-autotag",
-        opts = {},
-        event = "InsertEnter", -- load on insert enter
-    },
-    {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {
@@ -124,26 +119,19 @@ return {
                 enable = true,
                 additional_vim_regex_highlighting = false,
             },
-            autotag = {
-                enable = true,
-                filetypes = {
-                    "html",
-                    "javascript",
-                    "typescript",
-                    "javascriptreact",
-                    "typescriptreact",
-                    "svelte",
-                    "vue",
-                    "tsx",
-                    "jsx",
-                    "rescript",
-                    "css",
-                    "lua",
-                    "xml",
-                    "php",
-                    "markdown",
-                },
-            },
         },
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup {
+                opts = {
+                    enable_close = true, -- Auto close tags
+                    enable_rename = true, -- Auto rename tags
+                    enable_close_on_slash = false, -- Auto close on trailing </
+                },
+            }
+        end,
+        event = "InsertEnter", -- Lazy load on Insert mode
     },
 }
