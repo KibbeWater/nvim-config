@@ -50,6 +50,7 @@ return {
                 "tsx",
                 "json",
                 "go",
+                "markdown",
             },
             highlight = {
                 enable = true,
@@ -69,5 +70,48 @@ return {
             }
         end,
         event = "InsertEnter", -- Lazy load on Insert mode
+    },
+    {
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        build = "make",
+        cond = function()
+            return require("snow.settings").enable_ai
+        end,
+        opts = {
+            provider = "opencode",
+            acp_providers = {
+                ["opencode"] = {
+                    command = "opencode",
+                    args = { "acp" },
+                },
+            },
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
+            {
+                "HakonHarnes/img-clip.nvim",
+                event = "VeryLazy",
+                opts = {
+                    default = {
+                        embed_image_as_base64 = false,
+                        prompt_for_file_name = false,
+                        drag_and_drop = {
+                            insert_mode = true,
+                        },
+                        use_absolute_path = true,
+                    },
+                },
+            },
+            {
+                "MeanderingProgrammer/render-markdown.nvim",
+                opts = {
+                    file_types = { "markdown", "Avante" },
+                },
+                ft = { "markdown", "Avante" },
+            },
+        },
     },
 }
